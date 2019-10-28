@@ -3,13 +3,17 @@ package com.saagievements.saagievement.web.controller;
 import com.saagievements.saagievement.dao.AchievementDao;
 import com.saagievements.saagievement.dao.IAchievementDao;
 import com.saagievements.saagievement.model.Achievement;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 
+@Api( description = "API for CRUD operations on saagievements")
 @RestController
 public class AchievementController {
 
@@ -22,8 +26,9 @@ public class AchievementController {
 
     /**
      * Get all achievements
-     * @return achivelements list
+     * @return achievements list
      */
+    @ApiOperation(value = "Get all saagievements")
     @GetMapping(value="/api/achievements")
     public List<Achievement> getAchievements() {
         return achievementDao.findAll();
@@ -34,6 +39,7 @@ public class AchievementController {
      * @param id unique integer identifier
      * @return an achievement
      */
+    @ApiOperation(value = "Get a saagievement by id")
     @GetMapping(value="/api/achievement/{id}")
     public Achievement getAnAchievement(@PathVariable int id) {
         return achievementDao.findById(id);
@@ -41,10 +47,14 @@ public class AchievementController {
 
     /**
      * Add a new achievement
-     * @param goal an achievement description
+     * @param payload a payload like {"goal": "this is a new achievement"}
      */
+    @ApiOperation(value = "Add a new saagievement with a goal description")
     @PostMapping(value="/api/achievement")
-    public ResponseEntity<Void> addAchievement(@RequestBody String goal) {
+    public ResponseEntity<Void> addAchievement(@RequestBody Map<String, String> payload) {
+        System.out.println(payload);
+
+        String goal = payload.get("goal");
         Achievement achievementAdded = null;
 
         try {
@@ -66,6 +76,12 @@ public class AchievementController {
         return ResponseEntity.created(location).build();
     }
 
+    /**
+     * Unlock a achievement
+     * @param id unique achievement identifier
+     * @return an unlocked achievement
+     */
+    @ApiOperation(value = "Unlock a saagievement")
     @PostMapping(value="/api/achievement/{id}/unlock")
     public ResponseEntity<Void> unlockAchievement(@PathVariable int id) {
         Achievement achievementToUnlock = achievementDao.unlock(id);

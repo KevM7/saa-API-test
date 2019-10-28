@@ -160,7 +160,7 @@ public class AchievementDaoTest {
      * test save(String)
      */
     @Test
-    public void whenSaveByString_thenThrowException() {
+    public void whenSaveByString_thenReturnAchievement() {
         // given
         String goal = new String("This is a new achievement");
         int size = achievementsTest.size();

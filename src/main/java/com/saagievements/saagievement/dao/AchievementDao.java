@@ -52,7 +52,7 @@ public class AchievementDao implements IAchievementDao {
 
     @Override
     public Achievement save(String goal) {
-        if ((goal == null) || (goal.isEmpty())) {
+        if ((goal == null) || goal.isEmpty()) {
             throw new IllegalArgumentException("Method createAndSave : goal description can't be empty");
         }
         Achievement achievementAdded = new Achievement(achievements.size(), goal, false);

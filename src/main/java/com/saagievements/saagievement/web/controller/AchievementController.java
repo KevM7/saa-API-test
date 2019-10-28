@@ -52,9 +52,8 @@ public class AchievementController {
     @ApiOperation(value = "Add a new saagievement with a goal description")
     @PostMapping(value="/api/achievement")
     public ResponseEntity<Void> addAchievement(@RequestBody Map<String, String> payload) {
-        System.out.println(payload);
-
         String goal = payload.get("goal");
+
         Achievement achievementAdded = null;
 
         try {
@@ -90,11 +89,6 @@ public class AchievementController {
             return ResponseEntity.badRequest().build();
         }
 
-        URI location = ServletUriComponentsBuilder
-                .fromPath("/api/achievement/{id}")
-                .buildAndExpand(achievementToUnlock.getId())
-                .toUri();
-
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.ok().build();
     }
 }

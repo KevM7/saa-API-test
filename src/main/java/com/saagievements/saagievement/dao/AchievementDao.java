@@ -69,6 +69,4 @@ public class AchievementDao implements IAchievementDao {
 
         return achievementToUnlock;
     }
-
-
 }

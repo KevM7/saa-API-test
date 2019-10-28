@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AchievementDao implements IAchievementDao {
 
-    public static List<Achievement> achievements = new ArrayList<Achievement>();
+    public static List<Achievement> achievements = new ArrayList<>();
     static {
         achievements.add(new Achievement(
                 0,

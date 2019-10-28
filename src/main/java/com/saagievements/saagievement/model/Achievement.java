@@ -1,8 +1,10 @@
 package com.saagievements.saagievement.model;
 
+import java.util.Objects;
+
 public class Achievement {
 
-    // ATTRIBUTS
+    // ATTRIBUTES
 
     /**
      * Unique identifier
@@ -73,5 +75,15 @@ public class Achievement {
                     + ", goal=" + goal
                     + ", unlock=" + unlock
                 + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Achievement that = (Achievement) o;
+        return id == that.id &&
+                unlock == that.unlock &&
+                goal.equals(that.goal);
     }
 }

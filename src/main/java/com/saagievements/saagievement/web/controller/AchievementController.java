@@ -3,7 +3,6 @@ package com.saagievements.saagievement.web.controller;
 import com.saagievements.saagievement.dao.AchievementDao;
 import com.saagievements.saagievement.dao.IAchievementDao;
 import com.saagievements.saagievement.model.Achievement;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -12,11 +11,12 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-public class SaagievementController {
+public class AchievementController {
 
+    // FIXME use @Autowired
     private IAchievementDao achievementDao;
 
-    public SaagievementController() {
+    public AchievementController() {
         achievementDao = new AchievementDao();
     }
 

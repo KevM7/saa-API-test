@@ -2,6 +2,10 @@ package com.saagievements.saagievement.model;
 
 import java.util.Objects;
 
+/**
+ * Achievement represents a goal to do or done
+ * If it's done then this goal is unlocked
+ */
 public class Achievement {
 
     // ATTRIBUTES

@@ -4,6 +4,9 @@ import com.saagievements.saagievement.model.Achievement;
 
 import java.util.List;
 
+/**
+ * Interface to interact with achievement database
+ */
 public interface IAchievementDao {
 
     /**

@@ -13,7 +13,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
-@Api( description = "API for CRUD operations on saagievements")
+@Api
 @RestController
 public class AchievementController {
 

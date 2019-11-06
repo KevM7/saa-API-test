@@ -19,4 +19,4 @@ This project was bootstrapped with [Spring Initializr](https://start.spring.io/)
 ## Documentation
 
 - API documentation is available with [Swagger 2](https://swagger.io/) : [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html#/achievement-controller)
-- API is testing with [POSTMAN](https://www.getpostman.com/) : [https://documenter.getpostman.com/view/4921049/SVzz3KCs](https://documenter.getpostman.com/view/4921049/SVzz3KCs)
+- API is tested with [POSTMAN](https://www.getpostman.com/) : [https://documenter.getpostman.com/view/4921049/SVzz3KCs](https://documenter.getpostman.com/view/4921049/SVzz3KCs)
